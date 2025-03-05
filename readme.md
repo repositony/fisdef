@@ -1,5 +1,7 @@
 # FISPACT-II to decay source (`fisdef`)
 
+[![GitHub release](https://img.shields.io/github/v/release/repositony/fisdef?include_prereleases)](https://github.com/repositony/fisdef/releases/latest)
+
 Command line tool to convert FISPACT-II JSON results to decay sources.
 
 ```text
@@ -32,41 +34,6 @@ Note: --help shows more information and examples
 Help is printed with the `-h` flag, and `--help` will show default values,
 examples, and any important behaviour.
 
-## Install
-
-Direct from github:
-
-```shell
-cargo install --git https://github.com/repositony/fisdef.git
-```
-
-All executables are under `~/.cargo/bin/`, which should already be in your path
-after installing Rust.
-
-<details>
-  <summary>Click here if you have never used Rust</summary><br />
-
-If you have never used the Rust programming language, the toolchain is easily
-installed from the [official website](https://www.rust-lang.org/tools/install)
-
-### Unix (Linux/MacOS)
-
-Run the following to download and run `rustup-init.sh`, which will install
-the Rust toolchain for your platform.
-
-```shell
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-This should have added `source $HOME/.cargo/env` to the bash profile, so update
-your environment with `source ~/.bashrc`.
-
-### Windows
-
-On Windows, download and run `rustup-init.exe` from the [official installs](https://www.rust-lang.org/tools/install).
-
-</details>
-
 ## Overview
 
 This tool takes the FISPACT-II nuclides for any number of calculation steps and
@@ -87,6 +54,46 @@ matches them to known decay data from the [IAEA chart of nuclides](https://www-n
 
 Note that selecting 'gamma' will provide all photon data, including X-rays. This
 is consistent with the data retrieved via the horrible IAEA API.
+
+## Install
+
+Download and unpack the latest binary executable release [here](https://github.com/repositony/fisdef/releases/latest) for running in a terminal/powershell.
+
+### Linux/MacOS
+
+Unpack the relevant executable from the [latest release](https://github.com/repositony/fisdef/releases/latest).
+
+```bash
+# Linux
+tar -xjf fisdef-x86_64-unknown-linux-gnu.tar.xz  # Generic linux
+tar -xjf fisdef-aarch64-unknown-linux-gnu.tar.xz # ARM64 Linux
+
+# MacOS
+tar -xjf fisdef-x86_64-apple-darwin.tar.xz       # Intel macOS
+tar -xjf fisdef-aarch64-apple-darwin.tar.xz      # Apple Silicon macOS
+```
+
+And either run from there or add the executable to your `$PATH`.
+
+```bash
+./fisdef -h
+```
+
+### Windows
+
+Extract `fisdef-x86_64-pc-windows-msvc.zip` from the [latest release](https://github.com/repositony/fisdef/releases/latest).
+
+Navigate to this folder and run from powershell.
+
+```bash
+.\fisdef.exe -h
+```
+
+This may be set as an alias for convenience.
+
+```powershell
+Set-Alias -Name fisdef -Value C:\Path\To\Folder\fisdef.exe
+```
 
 ## Examples
 
