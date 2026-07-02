@@ -5,7 +5,7 @@
 Command line tool to convert FISPACT-II JSON results to decay sources.
 
 ```text
-Usage: fisjson <path> [options]
+Usage: fisdef <path> [options]
 
 Arguments:
   <path>                 Path to fispact JSON file
@@ -45,12 +45,12 @@ matches them to known decay data from the [IAEA chart of nuclides](https://www-n
 
 | Decay radiation type | IAEA symbol |
 | -------------------- | ----------- |
-| alpha                | a           |
-| beta plus            | bp          |
-| beta minus           | bm          |
-| gamma                | g           |
-| electron             | e           |
-| x-ray                | x           |
+| alpha | a |
+| beta plus | bp |
+| beta minus | bm |
+| gamma | g |
+| electron | e |
+| x-ray | x |
 
 Note that selecting 'gamma' will provide all photon data, including X-rays. This
 is consistent with the data retrieved via the horrible IAEA API.
@@ -116,13 +116,13 @@ calculation step.
 There are several input methods included for convenience. For example, if there
 were 5 calculation steps:
 
-| `[idx]` argument | Expanded        | Note                 |
+| `[idx]` argument | Expanded | Note |
 | ---------------- | --------------- | -------------------- |
-| 1                | [1]             |                      |
-| 0-2              | [0, 1, 2]       | Inclusive of upper   |
-| "1 3 4"          | [1, 3, 4]       | Must be in quotation |
-| all              | [0, 1, 2, 3, 4] |                      |
-| left blank       | [0, 1, 2, 3, 4] | [default]            |
+| 1 | [1] | |
+| 0-2 | [0, 1, 2] | Inclusive of upper |
+| "1 3 4" | [1, 3, 4] | Must be in quotation |
+| all | [0, 1, 2, 3, 4] | |
+| left blank | [0, 1, 2, 3, 4] | [default] |
 
 Any indices out of bounds are ignored.
 
@@ -139,12 +139,12 @@ fisdef results.json
 
 The following output formats are supported:
 
-| Output format   | Flag              |
-| --------------- | ----------------- |
-| Utf-8 text file | `-t`/`--text`     |
-| JSON            | `-j`/`--json`     |
-| MCNP SDEF       | `-m`/`--mcnp`     |
-| OpenMC          | work in progress  |
+| Output format | Flag |
+| --------------- | ---------------- |
+| Utf-8 text file | `-t`/`--text` |
+| JSON | `-j`/`--json` |
+| MCNP SDEF | `-m`/`--mcnp` |
+| OpenMC | work in progress |
 
 For example:
 
