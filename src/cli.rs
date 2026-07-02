@@ -68,7 +68,7 @@ use anyhow::Result;
     after_help("Note: --help shows more information and examples"),
     term_width(76),
     hide_possible_values(true),
-    override_usage("fisjson <path> [options]"),
+    override_usage("fisdef <path> [options]"),
     styles=custom_style(),
 )]
 pub struct Cli {

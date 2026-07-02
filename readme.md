@@ -5,7 +5,7 @@
 Command line tool to convert FISPACT-II JSON results to decay sources.
 
 ```text
-Usage: fisjson <path> [options]
+Usage: fisdef <path> [options]
 
 Arguments:
   <path>                 Path to fispact JSON file
